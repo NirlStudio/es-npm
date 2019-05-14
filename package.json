@@ -1,0 +1,44 @@
+{
+  "name": "sugly-npm",
+  "version": "0.1.1",
+  "description": "A command line tool to create npm compatible sugly packages.",
+  "author": {
+    "email": "leevi@nirlstudio.com",
+    "name": "Leevi Li"
+  },
+  "license": "MIT",
+  "repository": "NirlStudio/sugly-npm",
+  "main": "index.js",
+  "bin": {
+    "hello": "bin/sugly-npm"
+  },
+  "scripts": {
+    "test": "mocha",
+    "install": "scripts/install",
+    "uninstall": "scripts/uninstall"
+  },
+  "keywords": [
+    "sugly",
+    "sugly-lang",
+    "command",
+    "line",
+    "tool",
+    "app",
+    "npm",
+    "module",
+    "node"
+  ],
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "dependencies": {
+    "shelljs": "^0.8.3",
+    "sugly": "github:NirlStudio/sugly-lang#development"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "standard": "^12.0.1"
+  }
+}

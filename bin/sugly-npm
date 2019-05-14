@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+BASE_DIR="$(dirname $(cd "$(dirname "$0")" && pwd))"
+node $BASE_DIR/index.js $@

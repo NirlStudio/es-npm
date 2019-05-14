@@ -1,0 +1,18 @@
+{
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "leevi",
+    "mkdir",
+    "nirl",
+    "nirlstudio",
+    "res",
+    "sugly"
+  ],
+  "files.trimTrailingWhitespace": true,
+  "javascript.validate.enable": false,
+  "standard.enable": true,
+  "cSpell.ignoreWords": [
+    "res",
+    "tful"
+  ],
+}
