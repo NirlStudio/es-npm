@@ -20,5 +20,5 @@ if (require.main === module) {
 } else {
   // running as a module (exposing sugly module to JS code)
   var being = $void.createBootstrapSpace(path.join(srcHome, '@'))
-  module.exports = being.$import('module')
+  module.exports = being.$import('cli')
 }
