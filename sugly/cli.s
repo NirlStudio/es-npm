@@ -54,10 +54,10 @@ const app-name (path basename (env "home");
 
   # without this, a sugly dependency will not be linked.
   log info "Creating sugly/modules ...";
-  shell mkdir "sugly/modules"
+  shell mkdir "sugly/modules";
 
   log info "Generating README.md ...";
-  fs writeFileSync "README.md", '* $app-name\n\n**UPDATE ME**';
+  fs writeFileSync "README.md", '# $app-name\n\n**UPDATE ME**';
 
   log info "Installing dependencies ...";
   shell exec "npm install";
