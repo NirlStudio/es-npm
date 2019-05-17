@@ -57,7 +57,7 @@ const app-name (path basename (env "home");
   shell mkdir "sugly/modules"
 
   log info "Generating README.md ...";
-  fs writeFileSync "README.md", "* $app-name\n\n**UPDATE ME**";
+  fs writeFileSync "README.md", '* $app-name\n\n**UPDATE ME**';
 
   log info "Installing dependencies ...";
   shell exec "npm install";
