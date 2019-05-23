@@ -76,7 +76,7 @@ const app-name (path basename (env "home");
 
   update-info pkg;
   (if (options contains "--dev")
-    pkg dependencies:: "sugly", "NirlStudio/sugly-lang#development";
+    pkg dependencies:: "sugly", "github:NirlStudio/sugly-lang#development";
   ).
   (if (options contains "--compact")
     compact pkg;
