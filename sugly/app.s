@@ -4,7 +4,7 @@ const cli (import "./cli");
 const profile (import "./profile");
 
 (const valid-templates (@
-  "default", "app", "module", "web", "site", "api"
+  "default", "app", "module", "web", "api"
 ).
 
 (const valid-options (@
@@ -14,15 +14,14 @@ const profile (import "./profile");
 (const exit-with-help (= ()
   (print "
     Usage:\
-    \tsugly-npm init [default|app|module|web|site|api] [-c|--compact] [-d|--dev]\
+    \tsugly-npm init [default|app|module|web|api] [-c|--compact] [-d|--dev]\
     \
     Templates:\
-    \tdefault \tA project serves in both app and module modes.\
-    \tapp     \tA project only serves as an app.\
-    \tmodule  \tA project only serves as a module.\
-    \tweb     \tA web app project contains both pages and a RESTful service.\
-    \tsite    \tA web site project only hosts web pages.\
-    \tapi     \tA project serves as a RESTful service.\
+    \tdefault \tA project which may serve in both app and module modes.\
+    \tapp     \tA project which only serves as an app.\
+    \tmodule  \tA project which only serves as a module.\
+    \tweb     \tA web site project which serves as a sugly-based web app.\
+    \tapi     \tAn app project which serves as a RESTful service.\
     \
     Options:\
     \t-c, --compact \tremove test code, dependency on mocha and default vscode settings.\
