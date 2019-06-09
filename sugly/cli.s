@@ -1,4 +1,4 @@
-const fs (import "$fs");
+const fs (suglify (import "$fs");
 const path (import "$path");
 const shell (import "$shelljs");
 const profile (import "./profile");
@@ -13,7 +13,7 @@ const app-name (path basename (env "home");
   log info "Downloading template ...";
   shell exec 'git clone $repo .';
   shell rm "-rf", ".git/";
-  (fs existsSync "package.json") and (fs existsSync "sugly/");
+  (fs exists-sync "package.json") and (fs exists-sync "sugly/");
 ).
 
 (const update-info (=> (pkg)
@@ -48,27 +48,29 @@ const app-name (path basename (env "home");
 ).
 
 (const finalize-with (=> (options)
-  log info "Renaming executable file ...";
-  shell mv "bin/hello", 'bin/$app-name';
-  shell mv "bin/hello.cmd", 'bin/$(app-name).cmd';
+  (if (fs exists-sync "bin/hello")
+    log info "Renaming executable file ...";
+    shell mv "bin/hello", 'bin/$app-name';
+    shell mv "bin/hello.cmd", 'bin/$(app-name).cmd';
+  ).
 
   # without this, a sugly dependency will not be linked.
   log info "Creating sugly/modules ...";
   shell mkdir "sugly/modules";
 
   log info "Generating README.md ...";
-  fs writeFileSync "README.md", '# $app-name\n\n**UPDATE ME**';
+  fs write-file-sync "README.md", '# $app-name\n\n**UPDATE ME**';
 
   log info "Installing dependencies ...";
   shell exec "npm install";
-  (if (fs readdirSync "node_modules":: is-empty)
+  (if (fs readdir-sync "node_modules":: is-empty)
     (log warn 'Failed to install dependencies. ($code)
                Please run "npm install" to fix the problem.'
     ).
 ).
 
 (const customize-with (=> (options)
-  const pkg (json parse (fs readFileSync "package.json", "utf-8");
+  const pkg (json parse (fs read-file-sync "package.json", "utf-8");
   (if (pkg is-not-an object)
     log err "Invalid package.json.";
     return false;
@@ -81,14 +83,14 @@ const app-name (path basename (env "home");
   (if (options contains "--compact")
     compact pkg;
   ).
-  fs writeFileSync "package.json", (json of pkg);
+  fs write-file-sync "package.json", (json of pkg);
 
   finalize-with options;
   return true;
 ).
 
 (export init (=> (template, options)
-  (if (fs readdirSync (env "home"):: not-empty)
+  (if (fs readdir-sync (env "home"):: not-empty)
     log warn "This is not a clean directory:";
     (shell ls "-A":: first 6, (= (item, index)
       print "  ", (index is (6 th):: ? "...", item);
