@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # TheMengzor/gist:968e5ea87e99d9c41782
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
