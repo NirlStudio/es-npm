@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 
-BASE_DIR="$(dirname $(cd "$(dirname "$0")" && pwd))"
+# TheMengzor/gist:968e5ea87e99d9c41782
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+# TheMengzor/gist:968e5ea87e99d9c41782
+
+BASE_DIR="$(dirname $DIR)"
 node $BASE_DIR/index.js $@

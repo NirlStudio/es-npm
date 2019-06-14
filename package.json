@@ -1,6 +1,6 @@
 {
   "name": "sugly-npm",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A command line tool to create npm compatible sugly packages.",
   "author": {
     "email": "leevi@nirlstudio.com",
