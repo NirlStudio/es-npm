@@ -11,14 +11,14 @@ modules.register(require('./modules.js'))
 var $void = sugly()
 
 // prepare the path of app home directory.
-var srcHome = path.join(__dirname, 'sugly')
+var appHome = path.join(__dirname, 'sugly')
 
 if (require.main === module) {
   // running as an app.
   var args = global.process.argv.slice(2) || []
-  module.exports = $void.$run('app', args, srcHome)
+  module.exports = $void.$run('app', args, appHome)
 } else {
   // running as a module (exposing sugly module to JS code)
-  var being = $void.createBootstrapSpace(path.join(srcHome, '@'))
+  var being = $void.createBootstrapSpace(path.join(appHome, '@'))
   module.exports = being.$import('cli')
 }
