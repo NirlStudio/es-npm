@@ -3,7 +3,7 @@ A command line tool to create npm compatible Espresso packages.
 
 ## Install
 ````sh
-npm i -g es-npm
+npm i -g @eslang/es-npm
 ````
 
 ## Usage
