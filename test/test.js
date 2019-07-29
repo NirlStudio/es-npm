@@ -1,6 +1,6 @@
 var assert = require('assert')
 
-describe('sugly/cli', function () {
+describe('es/cli', function () {
   var cli = require('../index.js')
 
   describe('cli', function () {

@@ -1,6 +1,6 @@
 'use strict'
 /**
- * all native modules must be explicitly exposed to sugly code.
+ * all native modules must be explicitly exposed to Espresso script.
  */
 
 function copy (source, exporting) {
@@ -18,7 +18,7 @@ module.exports = function (uri) {
     case 'shelljs':
       return copy.bind(null, require('shelljs'))
     default:
-      console.warn('Sugly code is requesting for an unknown module:', uri)
+      console.warn('Espresso script is requesting for an unknown module:', uri)
       return null
   }
 }

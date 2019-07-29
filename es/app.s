@@ -1,10 +1,10 @@
-#!/usr/bin/env sugly
+#!/usr/bin/env es
 
 const cli (import "./cli");
 const profile (import "./profile");
 
 (const valid-templates (@
-  "default", "app", "module", "web", "api"
+  "default", "app", "module", "api", "web"
 ).
 
 (const valid-options (@
@@ -14,18 +14,18 @@ const profile (import "./profile");
 (const exit-with-help (= ()
   (print "
     Usage:\
-    \tsugly-npm init [default|app|module|web|api] [-c|--compact] [-d|--dev]\
+    \tes-npm init [default|app|module|web|api] [-c|--compact] [-d|--dev]\
     \
     Templates:\
     \tdefault \tA project which may serve in both app and module modes.\
     \tapp     \tA project which only serves as an app.\
     \tmodule  \tA project which only serves as a module.\
-    \tweb     \tA web site project which serves as a sugly-based web app.\
     \tapi     \tAn app project which serves as a RESTful service.\
+    \tweb     \tA web site project which serves as a web app.\
     \
     Options:\
     \t-c, --compact \tremove test code, dependency on mocha and default vscode settings.\
-    \t-d, --dev \tuse development (non-published & unstable) branch of sugly-lang.\
+    \t-d, --dev \tuse development (non-published & unstable) branch of eslang.\
     "
   ).
   exit 1;

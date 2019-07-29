@@ -14,6 +14,6 @@ PKG_NAME=$(basename $BASE_DIR)
 CONTAINER_DIR=$(dirname $BASE_DIR)
 APP_DIR=$(dirname $CONTAINER_DIR)
 
-if [ $(basename $CONTAINER_DIR) == "node_modules" ] && [ -d $APP_DIR/sugly/modules ]; then
-  rm $APP_DIR/sugly/modules/$PKG_NAME
+if [ $(basename $CONTAINER_DIR) == "node_modules" ] && [ -d $APP_DIR/es/modules ]; then
+  rm $APP_DIR/es/modules/$PKG_NAME
 fi

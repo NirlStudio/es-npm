@@ -1,4 +1,4 @@
-const fs (suglify (import "$fs");
+const fs (espress (import "$fs");
 const path (import "$path");
 const shell (import "$shelljs");
 const profile (import "./profile");
@@ -6,14 +6,14 @@ const profile (import "./profile");
 const app-name (path basename (env "home");
 
 (const repo-of (= (template)
-  'https://github.com/NirlStudio/sugly-npm-template-$(template ?* "default")'
+  'https://github.com/NirlStudio/es-npm-template-$(template ?* "default")'
 ).
 
 (const clone (=> (repo)
   log info "Downloading template ...";
   shell exec 'git clone $repo .';
   shell rm "-rf", ".git/";
-  (fs exists-sync "package.json") and (fs exists-sync "sugly/");
+  (fs exists-sync "package.json") and (fs exists-sync "es/");
 ).
 
 (const update-info (=> (pkg)
@@ -34,7 +34,7 @@ const app-name (path basename (env "home");
     (app-name): 'bin/$app-name'
   ).
   pkg "repository", "";
-  pkg "keywords", (@ "sugly");
+  pkg "keywords", (@ "eslang", "espresso", "espressolang", "espresso-lang");
 ).
 
 (const compact (=> (pkg)
@@ -54,9 +54,11 @@ const app-name (path basename (env "home");
     shell mv "bin/hello.cmd", 'bin/$(app-name).cmd';
   ).
 
-  # without this, a sugly dependency will not be linked.
-  log info "Creating sugly/modules ...";
-  shell mkdir "sugly/modules";
+  # without this, an Espresso dependency will not be linked.
+  (if (fs exists-sync "bin/hello":: is-not true)
+    log info "Creating es/modules ...";
+    shell mkdir "es/modules";
+  ).
 
   log info "Generating README.md ...";
   fs write-file-sync "README.md", '# $app-name\n\n**UPDATE ME**';
@@ -78,7 +80,7 @@ const app-name (path basename (env "home");
 
   update-info pkg;
   (if (options contains "--dev")
-    pkg dependencies:: "sugly", "github:NirlStudio/sugly-lang#development";
+    pkg dependencies:: "es", "github:NirlStudio/eslang#development";
   ).
   (if (options contains "--compact")
     compact pkg;
@@ -109,6 +111,6 @@ const app-name (path basename (env "home");
     return false;
   ).
 
-  printf 'Project $app-name has been initialized. Enjoy the sugliness.\n', "green";
+  printf 'Project $app-name has been initialized. Enjoy the Espresso.\n', "green";
   return true;
 ).

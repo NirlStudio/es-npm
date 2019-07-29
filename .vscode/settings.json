@@ -6,7 +6,7 @@
     "nirl",
     "nirlstudio",
     "res",
-    "sugly"
+    "eslang"
   ],
   "files.trimTrailingWhitespace": true,
   "javascript.validate.enable": false,

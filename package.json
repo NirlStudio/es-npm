@@ -1,16 +1,16 @@
 {
-  "name": "sugly-npm",
-  "version": "0.2.1",
-  "description": "A command line tool to create npm compatible sugly packages.",
+  "name": "es-npm",
+  "version": "1.0.1",
+  "description": "A command line tool to create npm compatible Espresso script packages.",
   "author": {
     "email": "leevi@nirlstudio.com",
     "name": "Leevi Li"
   },
   "license": "MIT",
-  "repository": "NirlStudio/sugly-npm",
+  "repository": "NirlStudio/es-npm",
   "main": "index.js",
   "bin": {
-    "hello": "bin/sugly-npm"
+    "es-npm": "bin/es-npm"
   },
   "scripts": {
     "test": "mocha",
@@ -18,8 +18,9 @@
     "uninstall": "scripts/uninstall"
   },
   "keywords": [
-    "sugly",
-    "sugly-lang",
+    "eslang",
+    "espresso",
+    "espresso-lang",
     "command",
     "line",
     "tool",
@@ -35,7 +36,7 @@
   },
   "dependencies": {
     "shelljs": "^0.8.3",
-    "sugly": "github:NirlStudio/sugly-lang#development"
+    "eslang": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "^6.1.4",

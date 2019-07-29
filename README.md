@@ -1,16 +1,16 @@
-# sugly-npm
-A command line tool to create npm compatible sugly packages.
+# es-npm
+A command line tool to create npm compatible Espresso packages.
 
 ## Install
 ````sh
-npm i -g sugly-npm
+npm i -g es-npm
 ````
 
 ## Usage
 ````sh
-mkdir my-sugly-app
-cd my-sugly-app
-sugly-npm init [default|app|module|web|site] [-c|--compact]  [-d|--dev]
+mkdir my-espresso-app
+cd my-espresso-app
+es-npm init [default|app|module|web|site] [-c|--compact]  [-d|--dev]
 ````
 ### Templates
 - default - A project serves in both app and module modes..
@@ -22,4 +22,4 @@ sugly-npm init [default|app|module|web|site] [-c|--compact]  [-d|--dev]
 
 ### Options
 - -c, --compact: remove test code and dependency on mocha.
-- -d, --dev: use development (non-published & unstable) branch of sugly-lang.
+- -d, --dev: use development (non-published & unstable) branch of eslang.
