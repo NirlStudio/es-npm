@@ -6,7 +6,8 @@
     "nirl",
     "nirlstudio",
     "res",
-    "eslang"
+    "eslang",
+    "espressolang"
   ],
   "files.trimTrailingWhitespace": true,
   "javascript.validate.enable": false,
