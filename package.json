@@ -1,5 +1,5 @@
 {
-  "name": "es-npm",
+  "name": "@eslang/es-npm",
   "version": "1.0.1",
   "description": "A command line tool to create npm compatible Espresso script packages.",
   "author": {
