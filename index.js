@@ -1,14 +1,14 @@
 'use strict'
 
 var path = require('path')
-var eslang = require('eslang')
+var espresso = require('eslang')
 var modules = require('eslang/modules')
 
 // expose some native modules.
 modules.register(require('./modules.js'))
 
 // create the void.
-var $void = eslang()
+var $void = espresso()
 
 // prepare the path of app home directory.
 var appHome = path.join(__dirname, 'es')

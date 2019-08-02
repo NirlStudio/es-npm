@@ -55,7 +55,7 @@ const app-name (path basename (env "home");
   ).
 
   # without this, an Espresso dependency will not be linked.
-  (if (fs exists-sync "bin/hello":: is-not true)
+  (if (fs exists-sync "es/modules":: is-not true)
     log info "Creating es/modules ...";
     shell mkdir "es/modules";
   ).
