@@ -51,7 +51,7 @@ const app-name (path basename (env "home");
   (if (fs exists-sync "bin/hello")
     log info "Renaming executable file ...";
     shell mv "bin/hello", 'bin/$app-name';
-    shell mv "bin/hello.cmd", 'bin/$(app-name).cmd';
+    shell mv "bin/hello.bat", 'bin/$(app-name).bat';
   ).
 
   # without this, an Espresso dependency will not be linked.

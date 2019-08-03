@@ -3,7 +3,7 @@ const path (import "$path");
 
 const user-home (env "user-home");
 const espresso-home (path resolve user-home, ".es");
-const profile-path (path resolve espresso-home, "npm.s");
+const profile-path (path resolve espresso-home, "npm.es");
 
 (const default-profile (=> () (@
   name: (path basename user-home),
@@ -16,7 +16,7 @@ const profile-path (path resolve espresso-home, "npm.s");
     return (default-profile );
   ).
   (if (fs existsSync espresso-home:: is false)
-    fs mkdir espresso-home;
+    fs mkdirSync espresso-home;
   ).
   (if (fs existsSync profile-path:: is false)
     fs writeFileSync profile-path, (default-profile :: to-code:: to-string);
