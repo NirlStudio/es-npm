@@ -10,15 +10,14 @@ npm i -g @eslang/es-npm
 ````sh
 mkdir my-espresso-app
 cd my-espresso-app
-es-npm init [default|app|module|web|site] [-c|--compact]  [-d|--dev]
+es-npm init [default|app|module|api|web] [-c|--compact] [-d|--dev]
 ````
 ### Templates
-- default - A project serves in both app and module modes..
-- app - A project only serves as an app.
-- module - A project only serves as a module.
-- web - A web app project contains both pages and a RESTful service.
-- site - A web site project only hosts web pages.
-- api - A project serves as a RESTful service.
+- default - A project which may serve in both app and module modes.
+- app - A project which only serves as an app.
+- module - A project which only serves as a module.
+- api - An app project which serves as a RESTful service.
+- web - A web site project which serves as a web app.
 
 ### Options
 - -c, --compact: remove test code and dependency on mocha.
