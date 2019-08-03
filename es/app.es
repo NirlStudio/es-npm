@@ -1,5 +1,6 @@
 #!/usr/bin/env es
 
+const io (import "io");
 const cli (import "./cli");
 const profile (import "./profile");
 
@@ -14,6 +15,7 @@ const profile (import "./profile");
 (const exit-with-help (= ()
   (print "
     Usage:\
+    \tes-npm version\
     \tes-npm init [default|app|module|web|api] [-c|--compact] [-d|--dev]\
     \
     Templates:\
@@ -40,6 +42,11 @@ const options (@);
 
 # split command and template types.
 var (command, template) commands;
+(if (command starts-with "ver")
+  var package (json parse (io read (@ -app-dir, "..", "package.json");
+  print (package version);
+  exit 0;
+).
 (if (command is-not "init")
   log warn (command is-empty:: ? "Missing command.", 'Unknown command: $command');
   exit-with-help;
