@@ -30,8 +30,9 @@ const app-name (path basename (env "home");
   pkg "license", (info license);
   pkg "name", app-name;
   pkg "description", app-name;
-  (pkg "bin", (@:@
-    (app-name): 'bin/$app-name'
+  (if  (pkg "bin":: not-empty)
+    (pkg "bin", (@:@
+      (app-name): 'bin/$app-name'
   ).
   pkg "repository", "";
   pkg "keywords", (@ "eslang", "espresso", "espressolang", "espresso-lang");
