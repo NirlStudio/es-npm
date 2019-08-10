@@ -1,6 +1,6 @@
 {
   "name": "@eslang/es-npm",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A command line tool to create npm compatible Espresso script packages.",
   "author": {
     "email": "leevi@nirlstudio.com",
@@ -13,9 +13,7 @@
     "es-npm": "bin/es-npm"
   },
   "scripts": {
-    "test": "mocha",
-    "install": "scripts/install",
-    "uninstall": "scripts/uninstall"
+    "test": "mocha"
   },
   "keywords": [
     "es",
@@ -38,7 +36,7 @@
   },
   "dependencies": {
     "shelljs": "^0.8.3",
-    "eslang": "^1.0.4"
+    "eslang": "^1.0.6"
   },
   "devDependencies": {
     "mocha": "^6.2.0",
